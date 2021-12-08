@@ -44,7 +44,7 @@ const signAndSendTransaction = async () => {
     }
     const injector = await web3FromAddress(sender.address);
 
-    const signed = await api.tx.balances.transfer(destination.address, 0.1).signAndSend(sender.address, { signer: injector.signer });
+    const signed = await api.tx.balances.transfer(destination.address, 10000).signAndSend(sender.address, { signer: injector.signer });
     console.log("🚀 ~ file: InnerProvider.vue ~ line 45 ~ signMessage ~ signed", signed);
   } catch (error) {
     console.error(error);
